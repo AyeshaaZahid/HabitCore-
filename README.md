@@ -2,7 +2,7 @@
 
 HabitCore is a premium, multi-page single-page application (SPA) habit tracker designed to help users define daily routines, monitor weekly discipline streams, and analyze their consistency over time. Built strictly within a zero-overhead architecture, it delivers a high-end SaaS aesthetic with zero external framework dependencies.
 
-🚀 **Live Deployment URL:** [Click Here to View the Live Application](PASTE_YOUR_VERCEL_OR_NETLIFY_LINK_HERE)
+🚀 **Live Deployment URL:** [Click Here to View the Live Application](Pecoagent-web.vercel.app)
 
 ---
 
@@ -37,4 +37,4 @@ Because this project is built using zero-build vanilla technologies, running it 
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
+   git clone [https://github.com/AyeshaaZahid/HabitCore.git](https://github.com/AyeshaaZahid/HabitCore.git)
