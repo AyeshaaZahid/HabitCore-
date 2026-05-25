@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitCore - Elite Multi-Page Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <aside class="sidebar">
+            <div class="brand-panel">
+                <div class="logo-sphere">⚡</div>
+                <div>
+                    <h2>HabitCore</h2>
+                    <p>Productivity Suite</p>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="menu-item active" onclick="switchPage('dashboardPage', this)">
+                    <span class="icon">📊</span> Tracker Dashboard
+                </button>
+                <button class="menu-item" onclick="switchPage('analyticsPage', this)">
+                    <span class="icon">📈</span> Analytics & Progress
+                </button>
+                <button class="menu-item" onclick="switchPage('settingsPage', this)">
+                    <span class="icon">⚙️</span> Settings & Profile
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <p>Version 2.0 (Pro)</p>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            
+            <section id="dashboardPage" class="page-view active">
+                <header>
+                    <div>
+                        <h1>Habit Matrix</h1>
+                        <p class="subtitle">Weekly Discipline Stream</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="habitInput" placeholder="Read 30 min, Workout, Code...">
+                        <button onclick="addHabit()" class="btn-add">+ Add Habit</button>
+                    </div>
+                </header>
+
+                <div class="toolbar">
+                    <div class="nav-controls">
+                        <button class="nav-btn" onclick="navigateWeek(-1)">◀ Prev</button>
+                        <span id="weekLabel"></span>
+                        <button class="nav-btn" onclick="navigateWeek(1)">Next ▶</button>
+                    </div>
+                    <button class="shortcut-btn" onclick="resetWeek()">Back to This Week</button>
+                </div>
+
+                <div class="grid-card">
+                    <div class="table-wrapper">
+                        <table id="trackerTable">
+                            <thead>
+                                <tr id="headerRow"></tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                    <div id="emptyState" class="empty-state">
+                        <div class="empty-icon">📅</div>
+                        <h3>No habits tracked yet</h3>
+                        <p>Type a routine above and click "Add Habit" to start your consistency streak!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="analyticsPage" class="page-view">
+                <header>
+                    <div>
+                        <h1>Analytics & Performance</h1>
+                        <p class="subtitle">Deep dive into your behavioral data metrics</p>
+                    </div>
+                </header>
+
+                <div class="analytics-grid">
+                    <div class="stat-card">
+                        <h3>Total Habits Tracked</h3>
+                        <div class="stat-value" id="statTotalHabits">0</div>
+                        <p class="stat-desc">Active items on your schedule</p>
+                    </div>
+                    <div class="stat-card unique-glow">
+                        <h3>Highest Active Streak</h3>
+                        <div class="stat-value" id="statMaxStreak">0 🔥</div>
+                        <p class="stat-desc">Your record current daily momentum</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Checks Logged</h3>
+                        <div class="stat-value" id="statTotalChecks">0</div>
+                        <p class="stat-desc">Completions registered lifetime</p>
+                    </div>
+                </div>
+                
+                <div class="analytics-chart-box">
+                    <h3>Consistency Insight</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Keep checking off boxes daily. Your streak metrics update in real time as you complete tasks inside the tracker grid view.</p>
+                </div>
+            </section>
+
+            <section id="settingsPage" class="page-view">
+                <header>
+                    <div>
+                        <h1>Dashboard Settings</h1>
+                        <p class="subtitle">Personalize your application configuration</p>
+                    </div>
+                </header>
+
+                <div class="settings-card">
+                    <div class="settings-row">
+                        <div>
+                            <h4>Local Storage Synchronization</h4>
+                            <p class="stat-desc">All user tracking data is saved natively inside your browser sandbox.</p>
+                        </div>
+                        <span class="status-indicator">Connected Active</span>
+                    </div>
+                    
+                    <div class="settings-row" style="border: none; padding-bottom: 0;">
+                        <div>
+                            <h4>Reset Tracking Ecosystem</h4>
+                            <p class="stat-desc" style="color: #f87171;">Warning: This will permanently wipe all your saved habits and history records.</p>
+                        </div>
+                        <button class="danger-btn" onclick="clearDataWorkspace()">Wipe App Database</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
